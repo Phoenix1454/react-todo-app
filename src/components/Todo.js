@@ -5,7 +5,7 @@ const Todo = ({text,setTodos,todos, todo}) =>{
         setTodos(todos.filter((el) => el.id !== todo.id));
     };
     const completeHandler = () =>{
-        setTodos(todos.map((item) =>
+        setTodos(todos?.map((item) =>
         {
             if(item.id === todo.id){
                 return{
