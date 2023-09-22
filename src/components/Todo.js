@@ -1,9 +1,9 @@
 import React from "react";
 
 const Todo = ({text,setTodos,todos, todo}) =>{
-    const deleteHadler = () =>{
-        setTodos(todos.filter((el) => el.id !== todo.id));
-    };
+     const deleteHadler = () =>{
+         setTodos(todos.filter((el) => el.id !== todo.id));
+     };
     const completeHandler = () =>{
         setTodos(todos?.map((item) =>
         {

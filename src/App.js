@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Form from './components/form';
 import Todolist from './components/todolist';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   const [inputText, setInputText] = useState("");
@@ -39,6 +40,7 @@ function App() {
   return (
     <div className="App">
       <header>
+        <Analytics />
         <h1>
           TO DO LIST
         </h1>
