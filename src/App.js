@@ -10,8 +10,9 @@ function App() {
   const [filteredTodos, setFilteredTodos] = useState([]);
   useEffect(() => {
     let todoLocal = JSON.parse(localStorage.getItem("todos"));
-    setTodos(todoLocal);
-  }, [])
+    // Check if todoLocal is null (no todos in local storage), and provide an empty array as a default value
+    setTodos(todoLocal || []);
+  }, []);
 
   useEffect(() => {
     filterHandler();
