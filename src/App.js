@@ -16,10 +16,10 @@ function App() {
 
   useEffect(() => {
     filterHandler();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [todos])
+  }, [todos, status]);
 
   const filterHandler = () => {
+    console.log(status)
     switch (status) {
       case 'completed':
         setFilteredTodos(todos.filter(todo => todo.completed === true));
@@ -43,7 +43,15 @@ function App() {
           TO DO LIST
         </h1>
       </header>
-      <Form filterHandler={filterHandler} saveLocalTodos={saveLocalTodos} inputText={inputText} setStatus={setStatus} todos={todos} setTodos={setTodos} setInputText={setInputText} />
+      <Form
+  setInputText={setInputText}
+  setTodos={setTodos}
+  todos={todos}
+  inputText={inputText}
+  setStatus={setStatus} // Ensure this is correctly passed
+  filterHandler={filterHandler} // Ensure this is correctly passed
+  saveLocalTodos={saveLocalTodos}
+/>
       <Todolist filteredTodos={filteredTodos} setTodos={setTodos} todos={todos} />
     </div>
   );
